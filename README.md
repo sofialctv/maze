@@ -2,7 +2,7 @@
 _Practical Assignment I of the Advanced Programming Techniques course [2024/2], taught by Prof. Mateus Costa._
 
 **Authors**
-- Manoel Rodrigues Loreiro - [@ManoelRL](https://github.com/ManoelRL)
+- Manoel Rodrigues Loureiro - [@ManoelRL](https://github.com/ManoelRL)
 - Sofia de Alcantara - [@sofialctv](https://github.com/sofialctv)
 
 # Objective
