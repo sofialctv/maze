@@ -1,6 +1,5 @@
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.Stack;
 
 public class Main {
 
@@ -71,7 +70,7 @@ public class Main {
 //    }
 //
 //    private boolean itsValid(int x, int y){
-//        return x >= 0 && x < maze.getRows() && y => 0 && y < maze.getColumns();
+//        return x >= 0 && x < maze.getRows() && y =>  0 && y < maze.getColumns();
 //    }
 //}
 
