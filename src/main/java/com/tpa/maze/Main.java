@@ -1,3 +1,5 @@
+package com.tpa.maze;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
