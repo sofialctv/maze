@@ -9,7 +9,7 @@ public class Position {
     public Position(int x, int y, String track){
         this.x = x;
         this.y = y;
-        this.track = track; // Guarda o valor do caminho "0 - Parede", "1 - Caminho possível", "2 - Caminho do Backtracking"
+        this.track = track; // Guarda o valor do caminho "0 - Parede", "1 - Caminho possível", "2 - Caminho do Percorrido que faz parte da solução", "3 - Caminho do Backtracking"
     }
 
     public int getX() { return x; }

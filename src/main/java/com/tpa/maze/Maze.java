@@ -46,10 +46,12 @@ public class Maze {
         }
     }
 
-
-    public int getRows() {
-        return rows;
+    public boolean solved(int row, int col) {
+        return (row == getRows()-1 && col == getColumns()-1);
     }
+
+
+    public int getRows() { return rows; }
 
     public int getColumns() { return columns; }
 

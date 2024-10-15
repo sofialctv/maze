@@ -12,7 +12,17 @@ public class Main {
 
         Maze maze = new Maze(fileCSV);
 
-        System.out.println(maze.show());
+        MazeSolver solver = new MazeSolver(maze);
+
+
+        if(solver.solve()) {
+            System.out.println(maze.show());
+        } else {
+            System.out.println("Não foi possível encontrar um caminho.");
+            System.out.println(maze.show());
+        }
+
+//        System.out.println(maze.show());
 
     }
 }

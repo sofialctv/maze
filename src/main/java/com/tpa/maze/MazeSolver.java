@@ -28,53 +28,53 @@ public class MazeSolver {
         this.maze = maze;
     }
 
-    public boolean solve(){
-        this.path.add(new Position(0, 0, "1"));
-        return solve(0, 0, maze);
+    public boolean solve() {
+        return solve(0, 0);  // Começa no ponto (0, 0)
     }
 
+    private boolean solve(int x, int y) {
+        // Verifica se chegou à saída
+        if (maze.solved(x, y)) {
+            path.add(new Position(x, y, "2"));
+            maze.getLabyrinth().get(x).set(y, "2");// Marca o caminho no labirinto
+            return true;
+        }
 
+        // Marca posição atual como parte do caminho
+        path.add(new Position(x, y, "2"));
+        maze.getLabyrinth().get(x).set(y, "2");  // Marca o caminho no labirinto
 
-    public boolean solve(int x, int y, Maze maze){
-
-        boolean done = false;
-        this.path.peek().setVisited(true);
-        String track = maze.getLabyrinth().get(x).get(y);
-        Position pos = new Position(x, y, track);
-
-        for(int[] direction : directions){
+        // Explora as direções possíveis
+        for (int[] direction : directions) {
             int newX = x + direction[0];
             int newY = y + direction[1];
 
-            if(isValid(newX, newY) && pos.getVisited())
-
-
+            if (isValid(newX, newY)) {
+                if (solve(newX, newY)) {
+                    return true;  // Caminho correto encontrado
+                }
+            }
         }
 
-        return done;
-
+        // Backtracking: remove do caminho se for um caminho sem saída
+        path.pop();
+        maze.getLabyrinth().get(x).set(y, "3");  // Marca com "3" para indicar que já foi visitado e não faz parte da solução
+        return false;
     }
 
-
-    private boolean isValid(int x, int y){
-        boolean result = false;
-
-        if(x >= 0 && x < this.maze.getLabyrinth().size() &&
-                y >= 0 && y < this.maze.getLabyrinth().getFirst().size()){
-
-            result = true;
-        }
-
-        return result;
+    private boolean isValid(int x, int y) {
+        return x >= 0 && x < maze.getRows() &&
+                y >= 0 && y < maze.getColumns() &&
+                maze.getLabyrinth().get(x).get(y).equals("1");  // "1" indica caminho válido
     }
 
     public Stack<Position> getPath() {
         return path;
     }
 
-    public void setPath(Stack<Position> path) {
-        this.path = path;
-    }
+//    public void setPath(Stack<Position> path) {
+//        this.path = path;
+//    }
 
     public static int[][] getDirections() {
         return directions;
