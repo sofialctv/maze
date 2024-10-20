@@ -10,19 +10,11 @@ public class Maze {
     private int rows, columns;
     private final ArrayList<ArrayList<String>> labyrinth = new ArrayList<>();
 
-    //TODO Substituir esse array de array por ArrayList
-    // # CLASSE MazeSolver #
-    //Método que verifica os caminhos possíveis
-    //Método que verifica se terminou
-    //Método que faz a travessia
-
-
     public Maze(String filename) {
-
         this.readDimensions(filename);
-
     }
 
+    // Reads the CSV file and constructs the grid of the maze
     private void readDimensions(String filename){
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filename));
@@ -37,19 +29,16 @@ public class Maze {
                 columns = Math.max(columns, values.length);
             }
 
-
             reader.close();
-
 
         } catch (IOException e) {
             System.err.println("Error on read file: "+ e.getMessage());
         }
     }
-
+    // Checks if the current position corresponds to the maze exit
     public boolean solved(int row, int col) {
         return (row == getRows()-1 && col == getColumns()-1);
     }
-
 
     public int getRows() { return rows; }
 
@@ -57,6 +46,7 @@ public class Maze {
 
     public ArrayList<ArrayList<String>> getLabyrinth() { return labyrinth; }
 
+    // Returns a string representation of the maze
     public String show(){
 
         String result = "";
@@ -67,8 +57,6 @@ public class Maze {
             }
             result += "\n";
         }
-
         return result;
-
     }
 }
