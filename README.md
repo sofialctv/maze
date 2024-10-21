@@ -22,7 +22,7 @@ The project contains the following files:
 
 - `MazePanel.java`: This class is responsible for the graphical representation of the maze using **Java's Swing** components. It handles the drawing of the maze and the animation of the solver as it moves through the maze.
 
-> ![img.png](img/img.png)
+> ![img.png](img%2Fimg.png)
 
 > _Output example using a 15x30 maze. The color BLACK represents walls, while WHITE represents possible paths. The GREEN squares are part of the "solution path", while the RED ones have been backtracked._
 
@@ -39,8 +39,7 @@ The project contains the following files:
 
 # Output Example
 The program will display the path from the entry point to the exit, or an error message if there is no viable path.
-![img_2.png](img/img_2.png)
- 
+![img_2.png](img/img_2.png) 
 ![img_1.png](img/img_1.png)
 > _From the graphical representation of the maze we can see that no exit was found. In the terminal we have the confirmation message that the maze does not have an exit, followed by a string representation of the maze where the number "3" is used to indicate that the coordinate was visited, but is not part of the solution path (it was backtracked)._
 
@@ -57,7 +56,7 @@ Ensure you have the following installed:
 cd <repository-directory>
 
 2. **Navigate to the Project's Root Directory:** Make sure you're in the folder containing the `pom.xml` file.
-> cd C:\YourFolder\maze3
+> cd C:\YourFolder\maze
 
 3. **Compile the Project:** Use Maven to compile the project and download any dependencies defined in `pom.xml`.
 > mvn compile
@@ -69,4 +68,4 @@ Alternatively, if you want to run the project from the target folder after build
 > java -cp target/classes com.tpa.maze.Main
 
 5. **Test Different Mazes:** You can test different mazes by providing the file path to a `.csv` file as prompted by the program. For example, you can use the maze files available in the `resources` folder:
-> Enter the name of the CSV file containing the maze: resources/5x5.csv
+> **Enter the name of the CSV file containing the maze:** src/main/resources/15x30.csv
